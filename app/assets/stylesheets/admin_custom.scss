@@ -1,0 +1,22 @@
+.pictures-list {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+  }
+
+  img {
+    max-width: 300px;
+    max-height: auto;
+  }
+}
+
+.picture {
+  max-width: 300px;
+  max-height: auto;
+}
+
+textarea#push_message {
+  width: calc(100% - 22px);
+}
