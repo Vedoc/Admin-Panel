@@ -1,0 +1,14 @@
+defaults: &defaults
+  password_reset_duration: 300
+  promo_code_duration: 86400
+  default_radius: 1609.34
+  service_request_fee: 125
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
