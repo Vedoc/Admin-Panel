@@ -1,0 +1,14 @@
+en:
+  settings:
+    attributes:
+      password_reset_duration:  'Password Reset Duration'
+      promo_code_duration: 'Promo Code Duration'
+      default_radius: 'Default Radius'
+      service_request_fee: 'Service Request Fee (in cents)'
+  admin:
+    shops:
+      messages:
+        confirm_approve: 'Are you sure you want to approve this?'
+        approved: 'Successfully Approved'
+      actions:
+        approve: 'Approve'
