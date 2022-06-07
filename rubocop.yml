@@ -1,0 +1,70 @@
+AllCops:
+  TargetRubyVersion: 2.5.1
+  Exclude:
+    - db/schema.rb
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - bin/*
+    - '**/*.erb'
+
+# Rails
+
+Rails:
+  Enabled: true
+
+Rails/FilePath:
+  Enabled: false
+
+# Metrics
+
+Metrics/AbcSize:
+  Max: 50
+  Exclude:
+    - db/migrate/*
+
+Metrics/BlockLength:
+  Max: 150
+
+Metrics/LineLength:
+  Max: 140
+
+Metrics/ModuleLength:
+  Max: 105
+
+Metrics/MethodLength:
+  Max: 30
+  Exclude:
+    - db/migrate/*
+
+# Bundler
+
+Bundler/OrderedGems:
+  Enabled: false
+
+# Documentation
+
+Documentation:
+  Enabled: false
+
+# Style
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Layout
+
+Layout/SpaceInsideParens:
+  EnforcedStyle: space
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  EnforcedStyle: space
+
+Layout/SpaceInsideReferenceBrackets:
+  EnforcedStyle: space
+
+Layout/SpaceInsideStringInterpolation:
+  EnforcedStyle: space
+
+Layout/SpaceAroundBlockParameters:
+  EnforcedStyleInsidePipes: space
+  AutoCorrect: false
