@@ -1,6 +1,6 @@
 ######################
 # Stage: Builder
-FROM ruby:2.5.1-alpine3.7 as Builder
+FROM ruby:3.3.0-alpine as Builder
 
 ARG FOLDERS_TO_REMOVE
 ARG BUNDLE_WITHOUT
@@ -27,7 +27,7 @@ WORKDIR /app
 # Install gems
 COPY Gemfile* /app/
 RUN bundle config --global frozen 1 \
- && bundle config "https://gitlab.com/fruktorum/backend/vedoc-vehicle-doctor/vedoc-plugin.git" $GIT_CREDENTIALS \
+ && bundle config "https://github.com/Vedoc/Vedoc-Plugin.git" $GIT_CREDENTIALS \
  && bundle install -j4 --retry 3 \
  # Remove unneeded files (cached *.gem, *.o, *.c)
  && rm -rf /usr/local/bundle/cache/*.gem \
@@ -39,7 +39,7 @@ RUN bundle config --global frozen 1 \
 # RUN yarn install
 
 # Add the Rails app
-COPY . /app
+COPY . .
 
 # Precompile assets
 RUN bundle exec rake assets:precompile
@@ -48,7 +48,7 @@ RUN bundle exec rake assets:precompile
 RUN rm -rf $FOLDERS_TO_REMOVE
 
 # Stage Final
-FROM ruby:2.5.1-alpine3.7
+FROM ruby:3.3.0-alpine
 
 ARG ADDITIONAL_PACKAGES
 ARG EXECJS_RUNTIME
