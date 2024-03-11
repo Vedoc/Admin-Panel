@@ -1,6 +1,6 @@
 ######################
 # Stage: Builder
-FROM ruby:3.3.0-alpine as Builder
+FROM ruby:3.0.2-alpine as Builder
 
 ARG FOLDERS_TO_REMOVE
 ARG BUNDLE_WITHOUT
@@ -48,7 +48,7 @@ RUN bundle exec rake assets:precompile
 RUN rm -rf $FOLDERS_TO_REMOVE
 
 # Stage Final
-FROM ruby:3.3.0-alpine
+FROM ruby:3.0.2-alpine
 
 ARG ADDITIONAL_PACKAGES
 ARG EXECJS_RUNTIME
