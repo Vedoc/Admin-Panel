@@ -3,7 +3,7 @@
 FROM ruby:3.3.0-alpine as Builder
 
 # Copy the master.key file into the Docker build context
-COPY master.key /app/config/master.key
+# COPY master.key /app/config/master.key
 
 
 ARG FOLDERS_TO_REMOVE
