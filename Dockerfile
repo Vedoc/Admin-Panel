@@ -46,7 +46,7 @@ RUN bundle config --global frozen 1 \
 COPY . .
 
 # Precompile assets
-RUN bundle exec rake assets:precompile
+# RUN bundle exec rake assets:precompile
 
 # Remove folders not needed in resulting image
 RUN rm -rf $FOLDERS_TO_REMOVE
