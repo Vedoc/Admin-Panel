@@ -31,7 +31,7 @@ WORKDIR /app
 # Install gems
 COPY Gemfile* /app/
 RUN bundle config --global frozen 1 \
- && bundle config "https://github.com/Vedoc/Vedoc-Plugin.git" $GIT_CREDENTIALS \
+ && bundle config "https://github.com/vedoc/vedoc-plugin.git" $GIT_CREDENTIALS \
  && bundle install -j4 --retry 3 \
  # Remove unneeded files (cached *.gem, *.o, *.c)
  && rm -rf /usr/local/bundle/cache/*.gem \

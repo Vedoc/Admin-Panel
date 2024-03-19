@@ -7,7 +7,7 @@ ruby '3.3.0'
 gem 'rails', '~> 7.1.3.2'
 
 # Vedoc app models
-gem 'vedoc-plugin', git: 'https://github.com/Vedoc/Vedoc-Plugin.git'
+gem 'vedoc-plugin', git: 'https://github.com/vedoc/vedoc-plugin.git'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
