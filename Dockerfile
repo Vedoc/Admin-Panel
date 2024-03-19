@@ -2,6 +2,9 @@
 # Stage: Builder
 FROM ruby:3.3.0-alpine as Builder
 
+# Install Bundler 2.5.6
+RUN gem install bundler -v '2.5.6'
+
 # Copy the master.key file into the Docker build context
 # COPY master.key /app/config/master.key
 
