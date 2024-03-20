@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/Vedoc/Vedoc-Plugin.git
-  revision: a8a9881517810e26e2c1005ebdc89db2260a3eef
+  remote: https://github.com/vedoc/vedoc-plugin.git
+  revision: 74a8fb98973fe2ea624823f73da7c77795c27653
   specs:
     vedoc-plugin (0.1.0)
       rails (>= 7.1.3.2)
