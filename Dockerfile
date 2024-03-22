@@ -92,6 +92,7 @@ RUN date -u > BUILD_TIME
 
 # Copy startup scripts
 COPY docker/ docker/
+RUN chmod +x /docker/*.sh
 
 # Start up
 CMD ["docker/startup.sh"]
