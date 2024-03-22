@@ -91,8 +91,8 @@ EXPOSE 3001
 RUN date -u > BUILD_TIME
 
 # Copy startup scripts
-# COPY docker/ docker/
-COPY admin-panel/docker/ /docker/
+COPY docker/ /docker/
+# COPY admin-panel/docker/ /docker/
 RUN chmod +x /docker/*.sh
 
 # Start up
