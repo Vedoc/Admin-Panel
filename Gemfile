@@ -47,7 +47,9 @@ gem 'bootsnap', '~> 1.18.3', require: false
 
 
 # The administration framework
-gem 'activeadmin'
+# gem 'activeadmin'
+# gem 'activeadmin', '~> 0.6.6'
+gem 'activeadmin', '4.0.0.beta5'
 gem 'devise'
 
 # Solution for file uploads
