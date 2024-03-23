@@ -15,7 +15,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 # ActiveRecord connection adapter for PostGIS, based on postgresql and rgeo
 gem 'activerecord-postgis-adapter'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+# gem 'puma', '~> 3.11'
+gem 'puma', '~> 6.4', '>= 6.4.2'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5.0'
 gem 'sassc'
