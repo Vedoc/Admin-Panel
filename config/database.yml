@@ -4,7 +4,7 @@ default: &default
   username: postgres
   password: password
   database: vedoc-api_development
-  host: database-1.c8zekncs5jhg.us-east-1.rds.amazonaws.com
+  host: localhost
   pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
 
 development:
