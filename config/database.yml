@@ -1,10 +1,10 @@
 default: &default
   adapter: postgis
   encoding: unicode
-  username: postgres
-  password: password
-  database: vedoc-api_development
-  host: localhost
+  username: ${DB_USER}
+  password: ${DB_PASSWORD}
+  database: ${DB_NAME}
+  host: ${DB_HOST}
   pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
 
 development:
