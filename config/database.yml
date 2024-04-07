@@ -1,15 +1,15 @@
 default: &default
   adapter: postgis
   encoding: unicode
-  username: ${DB_USER}
-  password: ${DB_PASSWORD}
-  database: ${DB_NAME}
-  host: ${DB_HOST}
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  database: <%= ENV['DB_NAME'] %>
+  host: <%= ENV['DB_HOST'].split(':')[0] %>  # Remove the port from DB_HOST
+  port: <%= ENV['DB_HOST'].split(':')[1] if ENV['DB_HOST'].include?(':') %>  # Include port if present
   pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
 
 development:
   <<: *default
-
 
 test:
   <<: *default
