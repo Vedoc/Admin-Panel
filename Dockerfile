@@ -1,13 +1,8 @@
-######################
 # Stage: Builder
 FROM ruby:3.3.0-alpine as Builder
 
 # Install Bundler 2.5.6
 RUN gem install bundler -v '2.5.6'
-
-# Copy the master.key file into the Docker build context
-# COPY master.key /app/config/master.key
-
 
 ARG FOLDERS_TO_REMOVE
 ARG BUNDLE_WITHOUT
@@ -54,6 +49,10 @@ COPY . .
 # Remove folders not needed in resulting image
 RUN rm -rf $FOLDERS_TO_REMOVE
 
+# Copy init.sql and entrypoint script
+COPY init.sql /docker-entrypoint-initdb.d/
+COPY docker/ /docker/
+
 # Stage Final
 FROM ruby:3.3.0-alpine
 
@@ -89,11 +88,6 @@ EXPOSE 3001
 
 # Save timestamp of image building
 RUN date -u > BUILD_TIME
-
-# Copy startup scripts
-COPY docker/ /docker/
-# COPY admin-panel/docker/ /docker/
-# RUN chmod +x /docker/*.sh
 
 # Start up
 CMD ["docker/startup.sh"]
