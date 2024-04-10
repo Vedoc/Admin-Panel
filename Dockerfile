@@ -29,13 +29,9 @@ WORKDIR /app
 # Install gems
 COPY Gemfile* /app/
 RUN bundle config frozen false \
- && bundle config "https://github.com/vedoc/vedoc-plugin.git" $GIT_CREDENTIALS \
- && bundle install -j4 --retry 3 \
- # Remove unneeded files (cached *.gem, *.o, *.c)
-#  && rm -rf /usr/local/bundle/cache/*.gem \
-#  && find /usr/local/bundle/gems/ -name "*.c" -delete \
-#  && find /usr/local/bundle/gems/ -name "*.o" -delete
- RUN rm -rf /usr/local/bundle/cache/*.gem \
+  && bundle config "https://github.com/vedoc/vedoc-plugin.git" $GIT_CREDENTIALS \
+  && bundle install -j4 --retry 3 \
+  && rm -rf /usr/local/bundle/cache/*.gem \
   && find /usr/local/bundle/gems/ -name "*.c" -delete \
   && find /usr/local/bundle/gems/ -name "*.o" -delete \
   && find /app/tmp/cache -type f -exec rm {} \;
