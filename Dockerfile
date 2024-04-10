@@ -37,14 +37,14 @@ RUN bundle config frozen false \
  && find /usr/local/bundle/gems/ -name "*.o" -delete
 
 # Install yarn packages
-# COPY package.json yarn.lock .yarnclean /app/
-# RUN yarn install
+COPY package.json yarn.lock .yarnclean /app/
+RUN yarn install
 
 # Add the Rails app
 COPY . .
 
 # Precompile assets
-# RUN bundle exec rake assets:precompile
+RUN bundle exec rake assets:precompile
 
 # Copy the startup script and grant executable permission
 COPY docker/startup.sh /docker/startup.sh
