@@ -76,6 +76,9 @@ RUN addgroup -g 1000 -S app \
  && adduser -u 1000 -S app -G app
 USER app
 
+# Set working directory
+WORKDIR /app
+
 # Copy app with gems from former build stage
 COPY --from=Builder /usr/local/bundle/ /usr/local/bundle/
 COPY --from=Builder --chown=app:app /app /app
@@ -84,8 +87,6 @@ COPY --from=Builder --chown=app:app /app /app
 ENV RAILS_LOG_TO_STDOUT true
 ENV RAILS_SERVE_STATIC_FILES true
 ENV EXECJS_RUNTIME $EXECJS_RUNTIME
-
-WORKDIR /app
 
 # Expose Puma port
 EXPOSE 3001
