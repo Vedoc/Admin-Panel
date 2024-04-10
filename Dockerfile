@@ -46,6 +46,9 @@ RUN yarn install
 # Add the Rails app
 COPY . .
 
+# Clear asset pipeline cache
+RUN bundle exec rake assets:clobber
+
 # Precompile assets
 RUN bundle exec rake assets:precompile --trace
 
