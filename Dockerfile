@@ -26,6 +26,9 @@ RUN apk add --update --no-cache \
 
 WORKDIR /app
 
+# Create /app/tmp/cache directory
+RUN mkdir -p /app/tmp/cache
+
 # Install gems
 COPY Gemfile* /app/
 RUN bundle config frozen false \
