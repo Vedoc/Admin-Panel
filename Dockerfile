@@ -46,6 +46,10 @@ COPY . .
 # Precompile assets
 # RUN bundle exec rake assets:precompile
 
+# Copy the startup script and grant executable permission
+COPY docker/startup.sh /docker/startup.sh
+RUN chmod +x /docker/startup.sh
+
 # Remove folders not needed in resulting image
 RUN rm -rf $FOLDERS_TO_REMOVE
 
