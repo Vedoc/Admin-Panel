@@ -29,6 +29,10 @@ module VedocAdmin
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    config.assets.configure do |env|
+      env.export_concurrent = false
+    end
+
     # Don't generate system test files.
     config.generators.system_tests = nil
 
@@ -36,5 +40,6 @@ module VedocAdmin
     config.middleware.use ActionDispatch::Flash
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    config.assets.enabled = true
   end
 end
