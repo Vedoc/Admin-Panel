@@ -57,6 +57,7 @@ gem 'devise'
 gem 'carrierwave'
 
 # UI interface for rails-settings-cached in active admin
+gem 'activeadmin', '4.0.0.beta5'
 gem 'activeadmin_settings_cached', '>= 2.3.1'
 
 
