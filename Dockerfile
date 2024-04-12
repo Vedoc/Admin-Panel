@@ -47,10 +47,10 @@ RUN yarn install
 COPY . .
 
 # Clear asset pipeline cache
-# RUN bundle exec rake assets:clobber
+RUN bundle exec rake assets:clobber
 
 # Precompile assets
-# RUN bundle exec rake assets:precompile --trace
+RUN bundle exec rake assets:precompile --trace
 
 # Copy the startup script and grant executable permission
 COPY docker/startup.sh /docker/startup.sh

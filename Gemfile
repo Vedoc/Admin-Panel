@@ -48,9 +48,9 @@ gem 'bootsnap', '~> 1.18.3', require: false
 
 
 # The administration framework
-# gem 'activeadmin'
+gem 'activeadmin'
 # gem 'activeadmin', '~> 0.6.6'
-gem 'activeadmin', '4.0.0.beta5'
+# gem 'activeadmin', '4.0.0.beta5'
 gem 'devise'
 
 # Solution for file uploads
@@ -58,7 +58,7 @@ gem 'carrierwave'
 
 # UI interface for rails-settings-cached in active admin
 # agem 'activeadmin_settings_cached', '>= 2.3.1'
-
+gem 'activeadmin_settings_cached', '~> 2.3', '>= 2.3.1'
 
 # Ruby bindings to Firebase Cloud Messaging
 gem 'fcm'

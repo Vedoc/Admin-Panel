@@ -401,8 +401,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activeadmin (= 4.0.0.beta5)
-  activeadmin_settings_cached (>= 2.3.1)
+  activeadmin
+  activeadmin_settings_cached (~> 2.3, >= 2.3.1)
   activerecord-postgis-adapter
   bootsnap (~> 1.18.3)
   byebug
